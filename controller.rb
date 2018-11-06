@@ -10,6 +10,7 @@ get '/rockpaperscissors/:hand1/:hand2' do
   @player1 = hand1
   @player2 = hand2
   @rps_result = game.play()
+  @game_result = RockPaperScissors.who_won(@player1, @rps_result)
   erb(:result)
 end
 
@@ -20,6 +21,7 @@ get '/playcomputer/:hand1' do
   @human_choice = hand1
   @computer_choice = hand2
   @comp_result = game.play
+  @who_won = RockPaperScissors.who_won(hand1, @comp_result)
   erb(:comp_result)
 end
 
