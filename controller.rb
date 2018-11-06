@@ -6,7 +6,6 @@ also_reload('models/*')
 get '/rockpaperscissors/:hand1/:hand2' do
   hand1 = params[:hand1]
   hand2 = params[:hand2]
-
   game = RockPaperScissors.new(hand1, hand2)
   @player1 = hand1
   @player2 = hand2
@@ -22,6 +21,16 @@ get '/playcomputer/:hand1' do
   @computer_choice = hand2
   @comp_result = game.play
   erb(:comp_result)
+end
+
+get '/playrandom' do
+  hand1 = ['rock', 'paper', 'scissors'].sample
+  hand2 = ['rock', 'paper', 'scissors'].sample
+  game = RockPaperScissors.new(hand1, hand2)
+  @computer1 = hand1
+  @computer2 = hand2
+  @random_result = game.play
+  erb(:random)
 end
 
 get '/rules' do
