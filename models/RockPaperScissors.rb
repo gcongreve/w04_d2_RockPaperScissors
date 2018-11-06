@@ -30,6 +30,8 @@ class RockPaperScissors
     if @hand1 == 'paper' && @hand2 == 'scissors'
       return "scissors wins"
     end
+  else
+    return "That is not a rock, paper or stone.  You've ruined the game."
   end
 
 
