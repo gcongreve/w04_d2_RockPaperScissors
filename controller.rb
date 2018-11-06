@@ -22,7 +22,7 @@ get '/playcomputer/:hand1' do
   @computer_choice = hand2
   @comp_result = game.play
   @who_won = RockPaperScissors.who_won(hand1, @comp_result)
-  erb(:comp_result)
+  erb(:computer_result)
 end
 
 get '/playrandom' do

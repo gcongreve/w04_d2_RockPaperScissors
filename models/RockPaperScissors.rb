@@ -3,8 +3,8 @@
 class RockPaperScissors
 
   def initialize(hand1, hand2)
-    @hand1 = hand1
-    @hand2 = hand2
+    @hand1 = hand1.downcase
+    @hand2 = hand2.downcase
   end
 
 
@@ -30,8 +30,8 @@ class RockPaperScissors
     if @hand1 == 'paper' && @hand2 == 'scissors'
       return "scissors wins"
     end
-  else
-    return "That is not a rock, paper or stone.  You've ruined the game."
+    else
+      return "That is not a rock, paper or stone.  You've ruined the game."
   end
 
   def self.who_won(hand1, result)
@@ -45,6 +45,5 @@ class RockPaperScissors
       return "The game has been ruined."
     end
   end
-
 
 end
